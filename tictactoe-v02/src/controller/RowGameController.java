@@ -58,25 +58,7 @@ public class RowGameController {
 	
 	if(gameModel.getPlayer().equals(Player.PLAYER_1)) {
 	    // Check whether player 1 won
-	    if(block==gameView.boardGameView.blocks[0][0]) {
-		gameModel.blocksData[0][0].setContents("X");
-		gameModel.blocksData[0][0].setIsLegalMove(false);
-		gameModel.setPlayer(Player.PLAYER_2);
-		if(gameModel.getMovesLeft()<7) {
-		    if((gameModel.blocksData[0][0].getContents().equals(gameModel.blocksData[0][1].getContents()) &&
-			gameModel.blocksData[0][1].getContents().equals(gameModel.blocksData[0][2].getContents())) ||
-		       (gameModel.blocksData[0][0].getContents().equals(gameModel.blocksData[1][0].getContents()) &&
-			gameModel.blocksData[1][0].getContents().equals(gameModel.blocksData[2][0].getContents())) ||
-		       (gameModel.blocksData[0][0].getContents().equals(gameModel.blocksData[1][1].getContents()) &&
-			gameModel.blocksData[1][1].getContents().equals(gameModel.blocksData[2][2].getContents()))) {
-			gameModel.setFinalResult("Player 1 wins!");
-			endGame();
-			} else if(gameModel.getMovesLeft()==0) {
-			gameModel.setFinalResult(RowGameModel.GAME_END_NOWINNER);
-		    }
-
-		}
-	    } else if(block==gameView.boardGameView.blocks[0][1]) {
+	     else if(block==gameView.boardGameView.blocks[0][1]) {
 		gameModel.blocksData[0][1].setContents("X");
 		gameModel.blocksData[0][1].setIsLegalMove(false);
 		gameModel.setPlayer(Player.PLAYER_2);
